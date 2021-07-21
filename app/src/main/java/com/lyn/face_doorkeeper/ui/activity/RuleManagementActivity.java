@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.AsyncTaskLoader;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,7 +57,7 @@ public class RuleManagementActivity extends BaseActivity<ActivityRuleManagementB
         adapter=new MyBaseAdapter<Rule, AdapterRuleItemBinding>() {
             @Override
             protected AdapterRuleItemBinding getViewBinding(ViewGroup parent) {
-                return AdapterRuleItemBinding.inflate(getLayoutInflater());
+                return AdapterRuleItemBinding.bind(LayoutInflater.from(context).inflate(R.layout.adapter_rule_item,null,false));
             }
 
             @Override
@@ -72,7 +73,7 @@ public class RuleManagementActivity extends BaseActivity<ActivityRuleManagementB
             }
         };
         bindView.RuleListView.setAdapter(adapter);
-
+        new RefreshRuleAsyncTask().execute();
     }
 
     @Override
@@ -160,8 +161,14 @@ public class RuleManagementActivity extends BaseActivity<ActivityRuleManagementB
                 binding.Determine.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        String ruleName = binding.RuleName.getText().toString();
+                        if (TextUtils.isEmpty(ruleName)){
+                            showToast(getString(R.string.str_pleaseEnterTheRuleName));
+                            return;
+                        }
                         dialog.dismiss();
                         Rule rule=new Rule();
+                        rule.setName(ruleName);
                         long startTime = TimeUtils.getTimeAndTimeStamp(binding.startTime.getText().toString());
                         long endTime = TimeUtils.getTimeAndTimeStamp(binding.endTime.getText().toString());
                         rule.setStartTime(startTime);
@@ -176,6 +183,8 @@ public class RuleManagementActivity extends BaseActivity<ActivityRuleManagementB
                         boolean save = rule.save();
                         if (save){
                             showToast(getString(R.string.str_savedSuccessfully));
+
+                            new RefreshRuleAsyncTask().execute();
                         }else {
                             showToast(getString(R.string.str_saveFailed));
                         }

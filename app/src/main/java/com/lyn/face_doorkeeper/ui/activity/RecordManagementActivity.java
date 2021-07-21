@@ -112,9 +112,9 @@ public class RecordManagementActivity extends BaseActivity<ActivityRecordManagem
             @Override
             public void onClick(View v) {
                 List<Menu> menuList = new ArrayList<>();
-                menuList.add(new Menu(getString(R.string.str_inquiry), R.drawable.inquiry));
-                menuList.add(new Menu(getString(R.string.str_import), R.drawable.import_data));
-                menuList.add(new Menu(getString(R.string.str_export), R.drawable.export_data));
+                menuList.add(new Menu(getString(R.string.str_inquiry), R.drawable.search));
+                menuList.add(new Menu(getString(R.string.str_import), R.drawable.import_export));
+                menuList.add(new Menu(getString(R.string.str_export), R.drawable.import_export));
 
                 DialogUtils.DialogMenu(context, getString(R.string.str_staffManagementMenu), menuList, new DialogUtils.CallbackDialogMenu() {
                     @Override

@@ -87,6 +87,8 @@
     <string name="str_sunday">星期天</string>
     <string name="str_savedSuccessfully">保存成功</string>
     <string name="str_saveFailed">保存失败</string>
+    <string name="str_ruleName">规则名称</string>
+    <string name="str_pleaseEnterTheRuleName">请输入规则名称</string>
 
 
     <string-array name="PersonType">

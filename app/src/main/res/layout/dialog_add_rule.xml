@@ -14,13 +14,23 @@
         android:text="@string/str_add_rule"
         android:textStyle="bold" />
 
+    <EditText
+        android:id="@+id/RuleName"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/Title"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:paddingLeft="10dp"
+        android:hint="@string/str_ruleName"
+        android:background="@drawable/fillet_bg_white_line_black"/>
+
 
     <LinearLayout
         android:id="@+id/TimeSelection"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Title"
-        android:layout_marginTop="20dp"
+        android:layout_height="?actionBarSize"
+        android:layout_below="@+id/RuleName"
+        android:layout_marginTop="10dp"
         android:background="@drawable/fillet_bg_white_line_black"
         android:orientation="horizontal">
 
@@ -53,12 +63,16 @@
     <HorizontalScrollView
         android:id="@+id/WeekSelectionHS"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="?actionBarSize"
         android:layout_below="@+id/TimeSelection"
+        android:background="@drawable/fillet_bg_white_line_black"
+        android:scrollbars="horizontal"
+        android:fillViewport="true"
         android:layout_marginTop="20dp">
 
         <RadioGroup
             android:id="@+id/WeekSelection"
+            android:layout_gravity="center_vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
