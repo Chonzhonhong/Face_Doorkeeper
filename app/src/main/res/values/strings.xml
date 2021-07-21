@@ -1,0 +1,103 @@
+<resources>
+    <string name="app_name">Face_Doorkeeper</string>
+
+    <string name="str_prompt">提示</string>
+    <string name="str_pleaseWait">请稍后......</string>
+    <string name="str_welcome">欢迎使用</string>
+    <string name="str_rememberPassword">记住密码</string>
+    <string name="str_userName">用户名</string>
+    <string name="str_userPassword">用户密码</string>
+    <string name="str_recognitionSettings">识别设置</string>
+    <string name="str_personnelManagement">人员管理</string>
+    <string name="str_recordsManagement">记录管理</string>
+    <string name="str_ruleManagement">规则管理</string>
+    <string name="str_accessControl">门禁管理</string>
+    <string name="str_backstageManagement">后台管理</string>
+    <string name="str_logManagement">日志管理</string>
+    <string name="str_firmwareUpgrade">固件升级</string>
+    <string name="str_restoreFactory">恢复出厂</string>
+    <string name="str_pleaseAimAtTheCameraAndBrushYourFace">请对准摄像头刷脸</string>
+    <string name="str_deviceSettings">设备设置</string>
+    <string name="str_name">姓名</string>
+    <string name="str_idCard">身份证号</string>
+    <string name="str_icCard">IC卡号</string>
+    <string name="str_name_point">姓名:</string>
+    <string name="str_iccard_point">IC卡号:</string>
+    <string name="str_person_type_point">人员类型:</string>
+    <string name="str_sex_point">性别:</string>
+    <string name="str_age_point">年龄:</string>
+    <string name="str_description_point">描述:</string>
+    <string name="str_add_person">添加人员</string>
+    <string name="str_frequentVisitor">常客</string>
+    <string name="str_visitor">访客</string>
+    <string name="str_administrator">管理员</string>
+    <string name="str_blacklist">黑名单</string>
+    <string name="str_idCard_point">身份证号:</string>
+    <string name="str_takePictures">拍照</string>
+    <string name="str_failedToExtractFacialFeatures">提取人脸特征失败</string>
+    <string name="str_nameCannotBeEmpty">姓名不能为空</string>
+    <string name="str_failedToSaveStaff">保存人员失败</string>
+    <string name="str_pleaseTakeAPicture">请拍照</string>
+    <string name="str_noFaceDetected">未检测到人脸</string>
+    <string name="str_failedToSavePhoto">保存照片失败</string>
+    <string name="str_creationTime">创建时间</string>
+    <string name="str_edit">编辑</string>
+    <string name="str_photo">照片</string>
+    <string name="str_theIDCardAlreadyExists">该身份证已经存在</string>
+    <string name="str_theICCardAlreadyExists">该IC卡已经存在</string>
+    <string name="str_cancel">取消</string>
+    <string name="str_delete">删除</string>
+    <string name="str_pleaseChoose">请选择</string>
+    <string name="str_pleaseRepeatVerificationByMistake">请误重复验证</string>
+    <string name="str_verifiedSuccessfully">验证成功</string>
+    <string name="str_verificationFailed">验证失败</string>
+    <string name="str_detected">已检测:</string>
+    <string name="str_totalDetection">总共检测:</string>
+    <string name="str_recordTime">记录时间</string>
+    <string name="str_previousPage">上一页</string>
+    <string name="str_nextPage">下一页</string>
+    <string name="str_inquiry">查询</string>
+    <string name="str_import">导入</string>
+    <string name="str_export">导出</string>
+    <string name="str_personInfo">人员信息</string>
+    <string name="str_sex">性别</string>
+    <string name="str_male">男</string>
+    <string name="str_female">女</string>
+    <string name="str_age">年龄</string>
+    <string name="str_time">时间</string>
+    <string name="str_recordInfo">记录信息</string>
+    <string name="str_staffManagementMenu">人员管理菜单</string>
+    <string name="str_faceRecognitionThreshold">人脸识别阈值:</string>
+    <string name="str_livingBody">活体开关:</string>
+    <string name="str_repeatVerificationInterval">同人重复验证间隔:</string>
+    <string name="str_verifyRealNameDisplay">验证实名显示:</string>
+    <string name="str_faceRecognitionSettings">人脸识别设置</string>
+    <string name="str_result">结果</string>
+    <string name="str_comparisonScore">比对分数</string>
+    <string name="str_runle_management">规则管理</string>
+    <string name="str_add_rule">添加规则</string>
+    <string name="str_determine">确定</string>
+    <string name="str_selectionPeriod">选择时间</string>
+    <string name="str_monday">星期一</string>
+    <string name="str_tuesday">星期二</string>
+    <string name="str_wednesday">星期三</string>
+    <string name="str_thursday">星期四</string>
+    <string name="str_friday">星期五</string>
+    <string name="str_saturday">星期六</string>
+    <string name="str_sunday">星期天</string>
+    <string name="str_savedSuccessfully">保存成功</string>
+    <string name="str_saveFailed">保存失败</string>
+
+
+    <string-array name="PersonType">
+        <item>常客</item>
+        <item>访客</item>
+        <item>管理员</item>
+        <item>黑名单</item>
+    </string-array>
+
+    <string-array name="PersonSex">
+        <item>男</item>
+        <item>女</item>
+    </string-array>/
+</resources>

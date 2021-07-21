@@ -1,0 +1,3 @@
+rootProject.name = "Face_Doorkeeper"
+include ':app'
+include ':module_face_ibrary'

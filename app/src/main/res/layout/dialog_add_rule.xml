@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/fillet_bg_white_line_black"
+    android:padding="20dp">
+
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_add_rule"
+        android:textStyle="bold" />
+
+
+    <LinearLayout
+        android:id="@+id/TimeSelection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Title"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/fillet_bg_white_line_black"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/startTime"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="00:00" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/left_fight" />
+
+        <TextView
+            android:id="@+id/endTime"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="00:00" />
+
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/WeekSelectionHS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TimeSelection"
+        android:layout_marginTop="20dp">
+
+        <RadioGroup
+            android:id="@+id/WeekSelection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <CheckBox
+                android:id="@+id/Monday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_monday" />
+
+            <CheckBox
+                android:id="@+id/Tuesday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_tuesday" />
+
+            <CheckBox
+                android:id="@+id/Wednesday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_wednesday" />
+
+            <CheckBox
+                android:id="@+id/Thursday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_thursday" />
+
+            <CheckBox
+                android:id="@+id/Friday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_friday" />
+
+            <CheckBox
+                android:id="@+id/Saturday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_saturday" />
+
+            <CheckBox
+                android:id="@+id/Sunday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_sunday" />
+        </RadioGroup>
+    </HorizontalScrollView>
+
+
+    <Button
+        android:id="@+id/Cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/WeekSelectionHS"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorRed"
+        android:text="@string/str_cancel"
+        android:textColor="@color/colorWhite" />
+
+    <Button
+        android:id="@+id/Determine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/WeekSelectionHS"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorGreen"
+        android:text="@string/str_determine"
+        android:textColor="@color/colorWhite" />
+
+
+</RelativeLayout>

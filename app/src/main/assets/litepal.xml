@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <!--
+        定义应用程序的数据库名称。
+         默认情况下，每个数据库名称都应以.db结尾。
+         如果您未命名数据库以.db结尾，
+         LitePal会自动为您添加后缀。
+         例如:
+        <dbname value="demo" />
+    -->
+    <dbname value="face_doorkeeper.db" />
+
+    <!--
+        定义数据库的版本。 每次你想
+         要升级数据库，版本标记会有所帮助。
+         修改您在映射标记中定义的模型，然后
+         使版本值加一，升级数据库
+         将自动处理，无需担心。
+             例如:
+        <version value="1" />
+    -->
+    <version value="1" />
+
+    <!--
+        使用映射标签在列表中定义模型，LitePal将
+         为每个映射类创建表。 支持的字段
+         模型中定义的内容将映射到列中。
+         例如:
+        <list>
+            <mapping class="com.test.model.Reader" />
+            <mapping class="com.test.model.Magazine" />
+        </list>
+    -->
+    <list>
+        <!--人员记录-->
+        <mapping class="com.lyn.face_doorkeeper.database.Person" />
+        <!--识别记录-->
+        <mapping class="com.lyn.face_doorkeeper.database.Record" />
+        <!--规则-->
+        <mapping class="com.lyn.face_doorkeeper.database.Rule" />
+    </list>
+
+    <!--
+       定义.db文件的位置。 internal“内部”是指.db文件
+         将存储在内部存储器的数据库文件夹中
+         一个可以访问。 external“外部”表示.db文件将存储在
+         主外部存储设备上目录的路径，其中
+         该应用程序可以放置每个人拥有的持久文件
+         可以访问。 “内部”将作为默认值。
+         例如:
+        <storage value="external" />
+    -->
+    <storage value="external" />
+
+
+    <!--      //统计行数
+            int result = LitePal.count(News.class);
+            // int result1 = LitePal.where("commentcount = ?", "0").count(News.class);
+            //结果求和
+            int result2 = LitePal.sum(News.class, "commentcount", int.class);
+            //结果求平均
+            double result3 = LitePal.average(News.class, "commentcount");
+            //求最大值
+            int result4 = LitePal.max(News.class, "commentcount", int.class);
+            //求最小值
+            int result5 = LitePal.min(News.class, "commentcount", int.class);-->
+</litepal>
