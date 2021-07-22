@@ -89,6 +89,11 @@
     <string name="str_saveFailed">保存失败</string>
     <string name="str_ruleName">规则名称</string>
     <string name="str_pleaseEnterTheRuleName">请输入规则名称</string>
+    <string name="str_ifYouDenyPermissionYouCanTUseTheSoftware">权限已经被拒绝请手动打开权限</string>
+    <string name="str_manuallyOpen">手动打开</string>
+    <string name="str_thisFeatureHasNotYetBeenDeveloped">该功能还未开发</string>
+    <string name="str_server_address">服务器地址:</string>
+    <string name="str_recordTheCallbackAddress">记录回调地址</string>
 
 
     <string-array name="PersonType">

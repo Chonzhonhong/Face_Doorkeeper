@@ -52,7 +52,11 @@ public class MMKVUtils {
     //同人识别间隔
     public static final String FAN_RECOGNITION_INTERVAL = "fanRecognitionInterval";
     //验证实名显示
-    public static final String VERIFY_REAL_NAME_DISPLAY="verifyRealNameDisplay";
+    public static final String VERIFY_REAL_NAME_DISPLAY = "verifyRealNameDisplay";
+    //服务器地址
+    public static final String SERVER_ADDRESS = "ServerAddress";
+    //记录回调地址
+    public static final String RECORD_THE_CALLBACK_ADDRESS = "recordTheCallbackAddress";
 
 
     public class defValue {
@@ -63,6 +67,10 @@ public class MMKVUtils {
         //同人识别间隔
         public static final int FAN_RECOGNITION_INTERVAL = 2;
         //验证实名显示
-        public static final boolean VERIFY_REAL_NAME_DISPLAY=false;
+        public static final boolean VERIFY_REAL_NAME_DISPLAY = false;
+        //服务器地址
+        public static final String SERVER_ADDRESS = "http://192.168.0.18:8080";
+        //记录回调地址
+        public static final String RECORD_THE_CALLBACK_ADDRESS = "http://192.168.0.18:8080/upRecord";
     }
 }

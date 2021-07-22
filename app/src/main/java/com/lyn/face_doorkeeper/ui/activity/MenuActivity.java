@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Toast;
+
 import com.lyn.face_doorkeeper.R;
 import com.lyn.face_doorkeeper.databinding.ActivityMenuBinding;
 import com.lyn.face_doorkeeper.databinding.AdapterGridMenuItemBinding;
@@ -81,18 +83,27 @@ public class MenuActivity extends BaseActivity<ActivityMenuBinding> implements A
         LogUtils.i(position+"");
         if (position==0){
             changeUI(FaceSettingActivity.class);
+            finish();
         }
         if (position==1){
             changeUI(PersonManagementActivity.class);
+            finish();
         }
         if (position==2){
             changeUI(RecordManagementActivity.class);
+            finish();
         }
         if (position==3){
             changeUI(RuleManagementActivity.class);
+            finish();
         }
         if (position==4){
+            showToast(getString(R.string.str_thisFeatureHasNotYetBeenDeveloped));
         }
-        finish();
+        if (position==5){
+            changeUI(BackstageManagementActivity.class);
+            finish();
+        }
+
     }
 }
