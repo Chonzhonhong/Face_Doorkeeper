@@ -32,6 +32,9 @@ android {
     viewBinding{
         enabled = true
     }
+    packagingOptions {
+        pickFirst 'lib/armeabi-v7a/libopencv_java3.so'
+    }
 }
 
 dependencies {
