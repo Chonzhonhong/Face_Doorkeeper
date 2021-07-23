@@ -19,6 +19,7 @@ import com.lyn.face_doorkeeper.database.Person;
 import com.lyn.face_doorkeeper.databinding.ActivityPersonManagementBinding;
 import com.lyn.face_doorkeeper.databinding.AdapterPersonOrRecordItemBinding;
 import com.lyn.face_doorkeeper.databinding.AdapterShowContentItemBinding;
+import com.lyn.face_doorkeeper.databinding.DialogConfirmOperationBinding;
 import com.lyn.face_doorkeeper.databinding.DialogEditPersonBinding;
 import com.lyn.face_doorkeeper.databinding.DialogInfoBinding;
 import com.lyn.face_doorkeeper.entity.ContentItem;
@@ -26,6 +27,7 @@ import com.lyn.face_doorkeeper.entity.Menu;
 import com.lyn.face_doorkeeper.ui.adapter.MyBaseAdapter;
 import com.lyn.face_doorkeeper.ui.dialog.BaseDialog;
 import com.lyn.face_doorkeeper.ui.dialog.DialogUtils;
+import com.lyn.face_doorkeeper.utils.FileUtils;
 import com.lyn.face_doorkeeper.utils.TimeUtils;
 import com.scwang.smart.refresh.footer.BallPulseFooter;
 import com.scwang.smart.refresh.header.BezierRadarHeader;
@@ -37,6 +39,7 @@ import com.scwang.smart.refresh.layout.listener.OnRefreshListener;
 import org.jetbrains.annotations.NotNull;
 import org.litepal.LitePal;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -97,10 +100,43 @@ public class PersonManagementActivity extends BaseActivity<ActivityPersonManagem
                                 }
                                 if (p==2){
                                     dialog.dismiss();
-                                    int delete = person.delete();
-                                    if (delete == 1) {
-                                        personItemBindingMyBaseAdapter.remove(position);
-                                    }
+                                    BaseDialog<DialogConfirmOperationBinding> operationBindingBaseDialog = new BaseDialog<DialogConfirmOperationBinding>(context, R.style.common_dialog) {
+                                        @Override
+                                        protected DialogConfirmOperationBinding getViewBinding() {
+                                            return DialogConfirmOperationBinding.bind(LayoutInflater.from(context).inflate(R.layout.dialog_confirm_operation, null, false));
+                                        }
+
+                                        @Override
+                                        protected void bindData(DialogConfirmOperationBinding binding, Dialog dialog) {
+                                            binding.Content.setText(getString(R.string.str_areYouSureYouWantToDeleteThisRecord));
+                                        }
+
+                                        @Override
+                                        protected void bindListener(DialogConfirmOperationBinding binding, Dialog dialog) {
+                                            binding.Cancel.setOnClickListener(new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View v) {
+                                                    dialog.dismiss();
+                                                }
+                                            });
+                                            binding.Determine.setOnClickListener(new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View v) {
+                                                    dialog.dismiss();
+                                                    int delete = person.delete();
+                                                    if (delete == 1) {
+                                                        personItemBindingMyBaseAdapter.remove(position);
+                                                        showToast(getString(R.string.str_successfullyDeleted));
+                                                    }else {
+                                                        showToast(getString(R.string.str_failedToDelete));
+                                                    }
+                                                }
+                                            });
+                                        }
+                                    };
+                                    operationBindingBaseDialog.setCanceledOnTouchOutside(false);
+                                    operationBindingBaseDialog.show();
+
                                 }
                             }
                         });

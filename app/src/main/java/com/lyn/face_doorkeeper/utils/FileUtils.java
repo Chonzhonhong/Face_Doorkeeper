@@ -251,18 +251,23 @@ public class FileUtils {
      * @param
      */
     public static void deleteFile(File folder) {
-        File[] files = folder.listFiles();
-        if (files != null) {
-            for (File f : files) {
-                if (!f.isDirectory()) {
-                    deleteFile(f);
-                } else {
-                    f.delete();
+        try {
+            File[] files = folder.listFiles();
+            if (files != null) {
+                for (File f : files) {
+                    if (!f.isDirectory()) {
+                        deleteFile(f);
+                    } else {
+                        f.delete();
+                    }
                 }
+            } else {
+                folder.delete();
             }
-        } else {
-            folder.delete();
+        }catch (Exception e){
+            e.printStackTrace();
         }
+
     }
 
     //拷贝文件到指定目录

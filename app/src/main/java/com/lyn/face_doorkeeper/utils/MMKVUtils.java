@@ -65,7 +65,7 @@ public class MMKVUtils {
         //活体
         public static final boolean LIVING_BODY = false;
         //同人识别间隔
-        public static final int FAN_RECOGNITION_INTERVAL = 2;
+        public static final int FAN_RECOGNITION_INTERVAL = 0;
         //验证实名显示
         public static final boolean VERIFY_REAL_NAME_DISPLAY = false;
         //服务器地址

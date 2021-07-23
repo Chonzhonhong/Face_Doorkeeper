@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 
+import com.lyn.face_doorkeeper.R;
+
 /**
  * 作者：龙永宁
  * @param <B>
@@ -20,7 +22,7 @@ public abstract class BaseDialog<B extends ViewBinding> extends Dialog {
     private B binding;
 
     public BaseDialog( Context context) {
-        super(context);
+        super(context, R.style.common_dialog);
     }
 
     public BaseDialog(@NonNull Context context, int themeResId) {
