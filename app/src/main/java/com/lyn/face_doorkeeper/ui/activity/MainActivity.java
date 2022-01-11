@@ -285,13 +285,16 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> implements F
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
+                    LogUtils.d("pid:"+pid+"person.getId():"+person.getId());
                     if (pid == person.getId()) {
                         if (System.currentTimeMillis() - RepeatVerificationTime <= fanRecognitionInterval * 1000) {
                             bindView.Hint.setText(realNameDisplay(person.getName()) + space(1) + getString(R.string.str_pleaseRepeatVerificationByMistake));
                             return;
                         }
                     }
-                    pid = person.getId();
+                    if (person!=null){
+                        pid = person.getId();
+                    }
                     RepeatVerificationTime = System.currentTimeMillis();
                     Bitmap bitmap = FaceHelper.getInstance().MatToBitmap(trackingInfo, false);
                     showPersonInfoDialog(person, bitmap, faceScore.getScore(),true);

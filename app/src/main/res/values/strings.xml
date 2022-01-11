@@ -94,6 +94,9 @@
     <string name="str_thisFeatureHasNotYetBeenDeveloped">该功能还未开发</string>
     <string name="str_server_address">服务器地址:</string>
     <string name="str_recordTheCallbackAddress">记录回调地址</string>
+    <string name="str_areYouSureYouWantToDeleteThisRecord">您确定要删除这条记录吗?</string>
+    <string name="str_successfullyDeleted">删除成功</string>
+    <string name="str_failedToDelete">删除失败</string>
 
 
     <string-array name="PersonType">
